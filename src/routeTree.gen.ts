@@ -8,44 +8,644 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from "./routes/__root"
-import { Route as IndexRouteImport } from "./routes/index"
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
+import { Route as AuthRegisterRouteImport } from './routes/auth/register'
+import { Route as AuthLoginRouteImport } from './routes/auth/login'
+import { Route as DashboardSettingsIndexRouteImport } from './routes/dashboard/settings/index'
+import { Route as DashboardPlaygroundIndexRouteImport } from './routes/dashboard/playground/index'
+import { Route as DashboardModelsIndexRouteImport } from './routes/dashboard/models/index'
+import { Route as DashboardDocumentationIndexRouteImport } from './routes/dashboard/documentation/index'
+import { Route as DashboardSettingsTeamRouteImport } from './routes/dashboard/settings/team'
+import { Route as DashboardSettingsLimitsRouteImport } from './routes/dashboard/settings/limits'
+import { Route as DashboardSettingsGeneralRouteImport } from './routes/dashboard/settings/general'
+import { Route as DashboardSettingsBillingRouteImport } from './routes/dashboard/settings/billing'
+import { Route as DashboardProjectsTravelRouteImport } from './routes/dashboard/projects/travel'
+import { Route as DashboardProjectsSalesMarketingRouteImport } from './routes/dashboard/projects/sales-marketing'
+import { Route as DashboardProjectsHealthcareRouteImport } from './routes/dashboard/projects/healthcare'
+import { Route as DashboardProjectsFintechRouteImport } from './routes/dashboard/projects/fintech'
+import { Route as DashboardProjectsECommerceRouteImport } from './routes/dashboard/projects/e-commerce'
+import { Route as DashboardProjectsDesignEngineeringRouteImport } from './routes/dashboard/projects/design-engineering'
+import { Route as DashboardPlaygroundStarredRouteImport } from './routes/dashboard/playground/starred'
+import { Route as DashboardPlaygroundSettingsRouteImport } from './routes/dashboard/playground/settings'
+import { Route as DashboardPlaygroundHistoryRouteImport } from './routes/dashboard/playground/history'
+import { Route as DashboardModelsQuantumRouteImport } from './routes/dashboard/models/quantum'
+import { Route as DashboardModelsGenesisRouteImport } from './routes/dashboard/models/genesis'
+import { Route as DashboardModelsExplorerRouteImport } from './routes/dashboard/models/explorer'
+import { Route as DashboardDocumentationTutorialsRouteImport } from './routes/dashboard/documentation/tutorials'
+import { Route as DashboardDocumentationIntroductionRouteImport } from './routes/dashboard/documentation/introduction'
+import { Route as DashboardDocumentationGetStartedRouteImport } from './routes/dashboard/documentation/get-started'
+import { Route as DashboardDocumentationChangelogRouteImport } from './routes/dashboard/documentation/changelog'
 
-const IndexRoute = IndexRouteImport.update({
-  id: "/",
-  path: "/",
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardIndexRoute = DashboardIndexRouteImport.update({
+  id: '/dashboard/',
+  path: '/dashboard/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRegisterRoute = AuthRegisterRouteImport.update({
+  id: '/auth/register',
+  path: '/auth/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/auth/login',
+  path: '/auth/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardSettingsIndexRoute = DashboardSettingsIndexRouteImport.update({
+  id: '/dashboard/settings/',
+  path: '/dashboard/settings/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardPlaygroundIndexRoute =
+  DashboardPlaygroundIndexRouteImport.update({
+    id: '/dashboard/playground/',
+    path: '/dashboard/playground/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardModelsIndexRoute = DashboardModelsIndexRouteImport.update({
+  id: '/dashboard/models/',
+  path: '/dashboard/models/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardDocumentationIndexRoute =
+  DashboardDocumentationIndexRouteImport.update({
+    id: '/dashboard/documentation/',
+    path: '/dashboard/documentation/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardSettingsTeamRoute = DashboardSettingsTeamRouteImport.update({
+  id: '/dashboard/settings/team',
+  path: '/dashboard/settings/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardSettingsLimitsRoute = DashboardSettingsLimitsRouteImport.update({
+  id: '/dashboard/settings/limits',
+  path: '/dashboard/settings/limits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardSettingsGeneralRoute =
+  DashboardSettingsGeneralRouteImport.update({
+    id: '/dashboard/settings/general',
+    path: '/dashboard/settings/general',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardSettingsBillingRoute =
+  DashboardSettingsBillingRouteImport.update({
+    id: '/dashboard/settings/billing',
+    path: '/dashboard/settings/billing',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardProjectsTravelRoute = DashboardProjectsTravelRouteImport.update({
+  id: '/dashboard/projects/travel',
+  path: '/dashboard/projects/travel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardProjectsSalesMarketingRoute =
+  DashboardProjectsSalesMarketingRouteImport.update({
+    id: '/dashboard/projects/sales-marketing',
+    path: '/dashboard/projects/sales-marketing',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardProjectsHealthcareRoute =
+  DashboardProjectsHealthcareRouteImport.update({
+    id: '/dashboard/projects/healthcare',
+    path: '/dashboard/projects/healthcare',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardProjectsFintechRoute =
+  DashboardProjectsFintechRouteImport.update({
+    id: '/dashboard/projects/fintech',
+    path: '/dashboard/projects/fintech',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardProjectsECommerceRoute =
+  DashboardProjectsECommerceRouteImport.update({
+    id: '/dashboard/projects/e-commerce',
+    path: '/dashboard/projects/e-commerce',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardProjectsDesignEngineeringRoute =
+  DashboardProjectsDesignEngineeringRouteImport.update({
+    id: '/dashboard/projects/design-engineering',
+    path: '/dashboard/projects/design-engineering',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardPlaygroundStarredRoute =
+  DashboardPlaygroundStarredRouteImport.update({
+    id: '/dashboard/playground/starred',
+    path: '/dashboard/playground/starred',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardPlaygroundSettingsRoute =
+  DashboardPlaygroundSettingsRouteImport.update({
+    id: '/dashboard/playground/settings',
+    path: '/dashboard/playground/settings',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardPlaygroundHistoryRoute =
+  DashboardPlaygroundHistoryRouteImport.update({
+    id: '/dashboard/playground/history',
+    path: '/dashboard/playground/history',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardModelsQuantumRoute = DashboardModelsQuantumRouteImport.update({
+  id: '/dashboard/models/quantum',
+  path: '/dashboard/models/quantum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardModelsGenesisRoute = DashboardModelsGenesisRouteImport.update({
+  id: '/dashboard/models/genesis',
+  path: '/dashboard/models/genesis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardModelsExplorerRoute = DashboardModelsExplorerRouteImport.update({
+  id: '/dashboard/models/explorer',
+  path: '/dashboard/models/explorer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardDocumentationTutorialsRoute =
+  DashboardDocumentationTutorialsRouteImport.update({
+    id: '/dashboard/documentation/tutorials',
+    path: '/dashboard/documentation/tutorials',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardDocumentationIntroductionRoute =
+  DashboardDocumentationIntroductionRouteImport.update({
+    id: '/dashboard/documentation/introduction',
+    path: '/dashboard/documentation/introduction',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardDocumentationGetStartedRoute =
+  DashboardDocumentationGetStartedRouteImport.update({
+    id: '/dashboard/documentation/get-started',
+    path: '/dashboard/documentation/get-started',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DashboardDocumentationChangelogRoute =
+  DashboardDocumentationChangelogRouteImport.update({
+    id: '/dashboard/documentation/changelog',
+    path: '/dashboard/documentation/changelog',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
-  "/": typeof IndexRoute
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/register': typeof AuthRegisterRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/dashboard/documentation/changelog': typeof DashboardDocumentationChangelogRoute
+  '/dashboard/documentation/get-started': typeof DashboardDocumentationGetStartedRoute
+  '/dashboard/documentation/introduction': typeof DashboardDocumentationIntroductionRoute
+  '/dashboard/documentation/tutorials': typeof DashboardDocumentationTutorialsRoute
+  '/dashboard/models/explorer': typeof DashboardModelsExplorerRoute
+  '/dashboard/models/genesis': typeof DashboardModelsGenesisRoute
+  '/dashboard/models/quantum': typeof DashboardModelsQuantumRoute
+  '/dashboard/playground/history': typeof DashboardPlaygroundHistoryRoute
+  '/dashboard/playground/settings': typeof DashboardPlaygroundSettingsRoute
+  '/dashboard/playground/starred': typeof DashboardPlaygroundStarredRoute
+  '/dashboard/projects/design-engineering': typeof DashboardProjectsDesignEngineeringRoute
+  '/dashboard/projects/e-commerce': typeof DashboardProjectsECommerceRoute
+  '/dashboard/projects/fintech': typeof DashboardProjectsFintechRoute
+  '/dashboard/projects/healthcare': typeof DashboardProjectsHealthcareRoute
+  '/dashboard/projects/sales-marketing': typeof DashboardProjectsSalesMarketingRoute
+  '/dashboard/projects/travel': typeof DashboardProjectsTravelRoute
+  '/dashboard/settings/billing': typeof DashboardSettingsBillingRoute
+  '/dashboard/settings/general': typeof DashboardSettingsGeneralRoute
+  '/dashboard/settings/limits': typeof DashboardSettingsLimitsRoute
+  '/dashboard/settings/team': typeof DashboardSettingsTeamRoute
+  '/dashboard/documentation': typeof DashboardDocumentationIndexRoute
+  '/dashboard/models': typeof DashboardModelsIndexRoute
+  '/dashboard/playground': typeof DashboardPlaygroundIndexRoute
+  '/dashboard/settings': typeof DashboardSettingsIndexRoute
 }
 export interface FileRoutesByTo {
-  "/": typeof IndexRoute
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/register': typeof AuthRegisterRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/dashboard/documentation/changelog': typeof DashboardDocumentationChangelogRoute
+  '/dashboard/documentation/get-started': typeof DashboardDocumentationGetStartedRoute
+  '/dashboard/documentation/introduction': typeof DashboardDocumentationIntroductionRoute
+  '/dashboard/documentation/tutorials': typeof DashboardDocumentationTutorialsRoute
+  '/dashboard/models/explorer': typeof DashboardModelsExplorerRoute
+  '/dashboard/models/genesis': typeof DashboardModelsGenesisRoute
+  '/dashboard/models/quantum': typeof DashboardModelsQuantumRoute
+  '/dashboard/playground/history': typeof DashboardPlaygroundHistoryRoute
+  '/dashboard/playground/settings': typeof DashboardPlaygroundSettingsRoute
+  '/dashboard/playground/starred': typeof DashboardPlaygroundStarredRoute
+  '/dashboard/projects/design-engineering': typeof DashboardProjectsDesignEngineeringRoute
+  '/dashboard/projects/e-commerce': typeof DashboardProjectsECommerceRoute
+  '/dashboard/projects/fintech': typeof DashboardProjectsFintechRoute
+  '/dashboard/projects/healthcare': typeof DashboardProjectsHealthcareRoute
+  '/dashboard/projects/sales-marketing': typeof DashboardProjectsSalesMarketingRoute
+  '/dashboard/projects/travel': typeof DashboardProjectsTravelRoute
+  '/dashboard/settings/billing': typeof DashboardSettingsBillingRoute
+  '/dashboard/settings/general': typeof DashboardSettingsGeneralRoute
+  '/dashboard/settings/limits': typeof DashboardSettingsLimitsRoute
+  '/dashboard/settings/team': typeof DashboardSettingsTeamRoute
+  '/dashboard/documentation': typeof DashboardDocumentationIndexRoute
+  '/dashboard/models': typeof DashboardModelsIndexRoute
+  '/dashboard/playground': typeof DashboardPlaygroundIndexRoute
+  '/dashboard/settings': typeof DashboardSettingsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  "/": typeof IndexRoute
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/register': typeof AuthRegisterRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/documentation/changelog': typeof DashboardDocumentationChangelogRoute
+  '/dashboard/documentation/get-started': typeof DashboardDocumentationGetStartedRoute
+  '/dashboard/documentation/introduction': typeof DashboardDocumentationIntroductionRoute
+  '/dashboard/documentation/tutorials': typeof DashboardDocumentationTutorialsRoute
+  '/dashboard/models/explorer': typeof DashboardModelsExplorerRoute
+  '/dashboard/models/genesis': typeof DashboardModelsGenesisRoute
+  '/dashboard/models/quantum': typeof DashboardModelsQuantumRoute
+  '/dashboard/playground/history': typeof DashboardPlaygroundHistoryRoute
+  '/dashboard/playground/settings': typeof DashboardPlaygroundSettingsRoute
+  '/dashboard/playground/starred': typeof DashboardPlaygroundStarredRoute
+  '/dashboard/projects/design-engineering': typeof DashboardProjectsDesignEngineeringRoute
+  '/dashboard/projects/e-commerce': typeof DashboardProjectsECommerceRoute
+  '/dashboard/projects/fintech': typeof DashboardProjectsFintechRoute
+  '/dashboard/projects/healthcare': typeof DashboardProjectsHealthcareRoute
+  '/dashboard/projects/sales-marketing': typeof DashboardProjectsSalesMarketingRoute
+  '/dashboard/projects/travel': typeof DashboardProjectsTravelRoute
+  '/dashboard/settings/billing': typeof DashboardSettingsBillingRoute
+  '/dashboard/settings/general': typeof DashboardSettingsGeneralRoute
+  '/dashboard/settings/limits': typeof DashboardSettingsLimitsRoute
+  '/dashboard/settings/team': typeof DashboardSettingsTeamRoute
+  '/dashboard/documentation/': typeof DashboardDocumentationIndexRoute
+  '/dashboard/models/': typeof DashboardModelsIndexRoute
+  '/dashboard/playground/': typeof DashboardPlaygroundIndexRoute
+  '/dashboard/settings/': typeof DashboardSettingsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: "/"
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/auth/login'
+    | '/auth/register'
+    | '/dashboard'
+    | '/dashboard/documentation/changelog'
+    | '/dashboard/documentation/get-started'
+    | '/dashboard/documentation/introduction'
+    | '/dashboard/documentation/tutorials'
+    | '/dashboard/models/explorer'
+    | '/dashboard/models/genesis'
+    | '/dashboard/models/quantum'
+    | '/dashboard/playground/history'
+    | '/dashboard/playground/settings'
+    | '/dashboard/playground/starred'
+    | '/dashboard/projects/design-engineering'
+    | '/dashboard/projects/e-commerce'
+    | '/dashboard/projects/fintech'
+    | '/dashboard/projects/healthcare'
+    | '/dashboard/projects/sales-marketing'
+    | '/dashboard/projects/travel'
+    | '/dashboard/settings/billing'
+    | '/dashboard/settings/general'
+    | '/dashboard/settings/limits'
+    | '/dashboard/settings/team'
+    | '/dashboard/documentation'
+    | '/dashboard/models'
+    | '/dashboard/playground'
+    | '/dashboard/settings'
   fileRoutesByTo: FileRoutesByTo
-  to: "/"
-  id: "__root__" | "/"
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/auth/login'
+    | '/auth/register'
+    | '/dashboard'
+    | '/dashboard/documentation/changelog'
+    | '/dashboard/documentation/get-started'
+    | '/dashboard/documentation/introduction'
+    | '/dashboard/documentation/tutorials'
+    | '/dashboard/models/explorer'
+    | '/dashboard/models/genesis'
+    | '/dashboard/models/quantum'
+    | '/dashboard/playground/history'
+    | '/dashboard/playground/settings'
+    | '/dashboard/playground/starred'
+    | '/dashboard/projects/design-engineering'
+    | '/dashboard/projects/e-commerce'
+    | '/dashboard/projects/fintech'
+    | '/dashboard/projects/healthcare'
+    | '/dashboard/projects/sales-marketing'
+    | '/dashboard/projects/travel'
+    | '/dashboard/settings/billing'
+    | '/dashboard/settings/general'
+    | '/dashboard/settings/limits'
+    | '/dashboard/settings/team'
+    | '/dashboard/documentation'
+    | '/dashboard/models'
+    | '/dashboard/playground'
+    | '/dashboard/settings'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/auth/login'
+    | '/auth/register'
+    | '/dashboard/'
+    | '/dashboard/documentation/changelog'
+    | '/dashboard/documentation/get-started'
+    | '/dashboard/documentation/introduction'
+    | '/dashboard/documentation/tutorials'
+    | '/dashboard/models/explorer'
+    | '/dashboard/models/genesis'
+    | '/dashboard/models/quantum'
+    | '/dashboard/playground/history'
+    | '/dashboard/playground/settings'
+    | '/dashboard/playground/starred'
+    | '/dashboard/projects/design-engineering'
+    | '/dashboard/projects/e-commerce'
+    | '/dashboard/projects/fintech'
+    | '/dashboard/projects/healthcare'
+    | '/dashboard/projects/sales-marketing'
+    | '/dashboard/projects/travel'
+    | '/dashboard/settings/billing'
+    | '/dashboard/settings/general'
+    | '/dashboard/settings/limits'
+    | '/dashboard/settings/team'
+    | '/dashboard/documentation/'
+    | '/dashboard/models/'
+    | '/dashboard/playground/'
+    | '/dashboard/settings/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  AuthLoginRoute: typeof AuthLoginRoute
+  AuthRegisterRoute: typeof AuthRegisterRoute
+  DashboardIndexRoute: typeof DashboardIndexRoute
+  DashboardDocumentationChangelogRoute: typeof DashboardDocumentationChangelogRoute
+  DashboardDocumentationGetStartedRoute: typeof DashboardDocumentationGetStartedRoute
+  DashboardDocumentationIntroductionRoute: typeof DashboardDocumentationIntroductionRoute
+  DashboardDocumentationTutorialsRoute: typeof DashboardDocumentationTutorialsRoute
+  DashboardModelsExplorerRoute: typeof DashboardModelsExplorerRoute
+  DashboardModelsGenesisRoute: typeof DashboardModelsGenesisRoute
+  DashboardModelsQuantumRoute: typeof DashboardModelsQuantumRoute
+  DashboardPlaygroundHistoryRoute: typeof DashboardPlaygroundHistoryRoute
+  DashboardPlaygroundSettingsRoute: typeof DashboardPlaygroundSettingsRoute
+  DashboardPlaygroundStarredRoute: typeof DashboardPlaygroundStarredRoute
+  DashboardProjectsDesignEngineeringRoute: typeof DashboardProjectsDesignEngineeringRoute
+  DashboardProjectsECommerceRoute: typeof DashboardProjectsECommerceRoute
+  DashboardProjectsFintechRoute: typeof DashboardProjectsFintechRoute
+  DashboardProjectsHealthcareRoute: typeof DashboardProjectsHealthcareRoute
+  DashboardProjectsSalesMarketingRoute: typeof DashboardProjectsSalesMarketingRoute
+  DashboardProjectsTravelRoute: typeof DashboardProjectsTravelRoute
+  DashboardSettingsBillingRoute: typeof DashboardSettingsBillingRoute
+  DashboardSettingsGeneralRoute: typeof DashboardSettingsGeneralRoute
+  DashboardSettingsLimitsRoute: typeof DashboardSettingsLimitsRoute
+  DashboardSettingsTeamRoute: typeof DashboardSettingsTeamRoute
+  DashboardDocumentationIndexRoute: typeof DashboardDocumentationIndexRoute
+  DashboardModelsIndexRoute: typeof DashboardModelsIndexRoute
+  DashboardPlaygroundIndexRoute: typeof DashboardPlaygroundIndexRoute
+  DashboardSettingsIndexRoute: typeof DashboardSettingsIndexRoute
 }
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/": {
-      id: "/"
-      path: "/"
-      fullPath: "/"
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/': {
+      id: '/dashboard/'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/register': {
+      id: '/auth/register'
+      path: '/auth/register'
+      fullPath: '/auth/register'
+      preLoaderRoute: typeof AuthRegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/login': {
+      id: '/auth/login'
+      path: '/auth/login'
+      fullPath: '/auth/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/settings/': {
+      id: '/dashboard/settings/'
+      path: '/dashboard/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof DashboardSettingsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/playground/': {
+      id: '/dashboard/playground/'
+      path: '/dashboard/playground'
+      fullPath: '/dashboard/playground'
+      preLoaderRoute: typeof DashboardPlaygroundIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/models/': {
+      id: '/dashboard/models/'
+      path: '/dashboard/models'
+      fullPath: '/dashboard/models'
+      preLoaderRoute: typeof DashboardModelsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/documentation/': {
+      id: '/dashboard/documentation/'
+      path: '/dashboard/documentation'
+      fullPath: '/dashboard/documentation'
+      preLoaderRoute: typeof DashboardDocumentationIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/settings/team': {
+      id: '/dashboard/settings/team'
+      path: '/dashboard/settings/team'
+      fullPath: '/dashboard/settings/team'
+      preLoaderRoute: typeof DashboardSettingsTeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/settings/limits': {
+      id: '/dashboard/settings/limits'
+      path: '/dashboard/settings/limits'
+      fullPath: '/dashboard/settings/limits'
+      preLoaderRoute: typeof DashboardSettingsLimitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/settings/general': {
+      id: '/dashboard/settings/general'
+      path: '/dashboard/settings/general'
+      fullPath: '/dashboard/settings/general'
+      preLoaderRoute: typeof DashboardSettingsGeneralRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/settings/billing': {
+      id: '/dashboard/settings/billing'
+      path: '/dashboard/settings/billing'
+      fullPath: '/dashboard/settings/billing'
+      preLoaderRoute: typeof DashboardSettingsBillingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/projects/travel': {
+      id: '/dashboard/projects/travel'
+      path: '/dashboard/projects/travel'
+      fullPath: '/dashboard/projects/travel'
+      preLoaderRoute: typeof DashboardProjectsTravelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/projects/sales-marketing': {
+      id: '/dashboard/projects/sales-marketing'
+      path: '/dashboard/projects/sales-marketing'
+      fullPath: '/dashboard/projects/sales-marketing'
+      preLoaderRoute: typeof DashboardProjectsSalesMarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/projects/healthcare': {
+      id: '/dashboard/projects/healthcare'
+      path: '/dashboard/projects/healthcare'
+      fullPath: '/dashboard/projects/healthcare'
+      preLoaderRoute: typeof DashboardProjectsHealthcareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/projects/fintech': {
+      id: '/dashboard/projects/fintech'
+      path: '/dashboard/projects/fintech'
+      fullPath: '/dashboard/projects/fintech'
+      preLoaderRoute: typeof DashboardProjectsFintechRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/projects/e-commerce': {
+      id: '/dashboard/projects/e-commerce'
+      path: '/dashboard/projects/e-commerce'
+      fullPath: '/dashboard/projects/e-commerce'
+      preLoaderRoute: typeof DashboardProjectsECommerceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/projects/design-engineering': {
+      id: '/dashboard/projects/design-engineering'
+      path: '/dashboard/projects/design-engineering'
+      fullPath: '/dashboard/projects/design-engineering'
+      preLoaderRoute: typeof DashboardProjectsDesignEngineeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/playground/starred': {
+      id: '/dashboard/playground/starred'
+      path: '/dashboard/playground/starred'
+      fullPath: '/dashboard/playground/starred'
+      preLoaderRoute: typeof DashboardPlaygroundStarredRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/playground/settings': {
+      id: '/dashboard/playground/settings'
+      path: '/dashboard/playground/settings'
+      fullPath: '/dashboard/playground/settings'
+      preLoaderRoute: typeof DashboardPlaygroundSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/playground/history': {
+      id: '/dashboard/playground/history'
+      path: '/dashboard/playground/history'
+      fullPath: '/dashboard/playground/history'
+      preLoaderRoute: typeof DashboardPlaygroundHistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/models/quantum': {
+      id: '/dashboard/models/quantum'
+      path: '/dashboard/models/quantum'
+      fullPath: '/dashboard/models/quantum'
+      preLoaderRoute: typeof DashboardModelsQuantumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/models/genesis': {
+      id: '/dashboard/models/genesis'
+      path: '/dashboard/models/genesis'
+      fullPath: '/dashboard/models/genesis'
+      preLoaderRoute: typeof DashboardModelsGenesisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/models/explorer': {
+      id: '/dashboard/models/explorer'
+      path: '/dashboard/models/explorer'
+      fullPath: '/dashboard/models/explorer'
+      preLoaderRoute: typeof DashboardModelsExplorerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/documentation/tutorials': {
+      id: '/dashboard/documentation/tutorials'
+      path: '/dashboard/documentation/tutorials'
+      fullPath: '/dashboard/documentation/tutorials'
+      preLoaderRoute: typeof DashboardDocumentationTutorialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/documentation/introduction': {
+      id: '/dashboard/documentation/introduction'
+      path: '/dashboard/documentation/introduction'
+      fullPath: '/dashboard/documentation/introduction'
+      preLoaderRoute: typeof DashboardDocumentationIntroductionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/documentation/get-started': {
+      id: '/dashboard/documentation/get-started'
+      path: '/dashboard/documentation/get-started'
+      fullPath: '/dashboard/documentation/get-started'
+      preLoaderRoute: typeof DashboardDocumentationGetStartedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/documentation/changelog': {
+      id: '/dashboard/documentation/changelog'
+      path: '/dashboard/documentation/changelog'
+      fullPath: '/dashboard/documentation/changelog'
+      preLoaderRoute: typeof DashboardDocumentationChangelogRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -53,6 +653,37 @@ declare module "@tanstack/react-router" {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  AuthLoginRoute: AuthLoginRoute,
+  AuthRegisterRoute: AuthRegisterRoute,
+  DashboardIndexRoute: DashboardIndexRoute,
+  DashboardDocumentationChangelogRoute: DashboardDocumentationChangelogRoute,
+  DashboardDocumentationGetStartedRoute: DashboardDocumentationGetStartedRoute,
+  DashboardDocumentationIntroductionRoute:
+    DashboardDocumentationIntroductionRoute,
+  DashboardDocumentationTutorialsRoute: DashboardDocumentationTutorialsRoute,
+  DashboardModelsExplorerRoute: DashboardModelsExplorerRoute,
+  DashboardModelsGenesisRoute: DashboardModelsGenesisRoute,
+  DashboardModelsQuantumRoute: DashboardModelsQuantumRoute,
+  DashboardPlaygroundHistoryRoute: DashboardPlaygroundHistoryRoute,
+  DashboardPlaygroundSettingsRoute: DashboardPlaygroundSettingsRoute,
+  DashboardPlaygroundStarredRoute: DashboardPlaygroundStarredRoute,
+  DashboardProjectsDesignEngineeringRoute:
+    DashboardProjectsDesignEngineeringRoute,
+  DashboardProjectsECommerceRoute: DashboardProjectsECommerceRoute,
+  DashboardProjectsFintechRoute: DashboardProjectsFintechRoute,
+  DashboardProjectsHealthcareRoute: DashboardProjectsHealthcareRoute,
+  DashboardProjectsSalesMarketingRoute: DashboardProjectsSalesMarketingRoute,
+  DashboardProjectsTravelRoute: DashboardProjectsTravelRoute,
+  DashboardSettingsBillingRoute: DashboardSettingsBillingRoute,
+  DashboardSettingsGeneralRoute: DashboardSettingsGeneralRoute,
+  DashboardSettingsLimitsRoute: DashboardSettingsLimitsRoute,
+  DashboardSettingsTeamRoute: DashboardSettingsTeamRoute,
+  DashboardDocumentationIndexRoute: DashboardDocumentationIndexRoute,
+  DashboardModelsIndexRoute: DashboardModelsIndexRoute,
+  DashboardPlaygroundIndexRoute: DashboardPlaygroundIndexRoute,
+  DashboardSettingsIndexRoute: DashboardSettingsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

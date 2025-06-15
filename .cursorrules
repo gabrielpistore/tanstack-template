@@ -1,7 +1,83 @@
 # shadcn instructions
 
-Use the latest version of Shadcn to install new components, like this command to add a button component:
+- Use the latest version of Shadcn to install new components, like this command to add a button component:
 
 ```bash
 bunx --bun shadcn@latest add button
 ```
+
+# Shadcn Components Usage Rule
+
+- Always use official Shadcn components whenever they cover the needed functionality or can be combined to solve the requirement, instead of building similar components from scratch. This ensures consistency, maintainability, and faster development.
+
+- Below is the list of current Shadcn components to always consider before creating new custom ones:
+
+  - Accordion
+  - Alert
+  - Alert Dialog
+  - Aspect Ratio
+  - Avatar
+  - Badge
+  - Breadcrumb
+  - Button
+  - Calendar
+  - Card
+  - Carousel
+  - Chart
+  - Checkbox
+  - Collapsible
+  - Combobox
+  - Command
+  - Context Menu
+  - Data Table
+  - Date Picker
+  - Dialog
+  - Drawer
+  - Dropdown Menu
+  - React Hook Form
+  - Hover Card
+  - Input
+  - Input OTP
+  - Label
+  - Menubar
+  - Navigation Menu
+  - Pagination
+  - Popover
+  - Progress
+  - Radio Group
+  - Resizable
+  - Scroll-area
+  - Select
+  - Separator
+  - Sheet
+  - Sidebar
+  - Skeleton
+  - Slider
+  - Sonner
+  - Switch
+  - Table
+  - Tabs
+  - Textarea
+  - Toast
+  - Toggle
+  - Toggle Group
+  - Tooltip
+  - Typography
+
+- Always check the official Shadcn documentation (https://ui.shadcn.com/docs/components) for updates or new components.
+
+# Import Paths Rules
+
+- Always use import paths like "@/MY_PATH_HERE..."
+
+# Modular Structure Rules
+
+- Always use a modular folder structure when working with multiple related files. Group related files into dedicated folders whenever it makes sense, to keep the project organized and maintainable.
+
+# Code Language Rule
+
+- All code-related elements must be written in English, including variable names, function names, class names, comments, and documentation within the code. This rule applies even if the application's interface or the conversation is in another language.
+
+# Language Consistency Rule
+
+- Always follow these rules regardless of the language used during the chat or request. The instructions apply consistently whether the conversation is in English, Portuguese, or any other language.
