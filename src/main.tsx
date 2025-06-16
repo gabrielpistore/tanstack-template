@@ -1,12 +1,15 @@
+import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
 
 // Import the generated route tree
-import { routeTree } from "./routeTree.gen";
+import { routeTree } from "@/routeTree.gen";
 
-import "./styles.css";
-import reportWebVitals from "./reportWebVitals.ts";
+// Import data provider
+import { DataProvider, drfAdapter } from "@/lib/api";
+
+import reportWebVitals from "@/reportWebVitals.ts";
+import "@/styles.css";
 
 // Create a new router instance
 const router = createRouter({
@@ -31,7 +34,9 @@ if (rootElement && !rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <DataProvider adapter={drfAdapter}>
+        <RouterProvider router={router} />
+      </DataProvider>
     </StrictMode>
   );
 }

@@ -13,6 +13,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
+import { Route as DashboardProductsRouteImport } from './routes/dashboard/products'
 import { Route as AuthRegisterRouteImport } from './routes/auth/register'
 import { Route as AuthLoginRouteImport } from './routes/auth/login'
 import { Route as DashboardSettingsIndexRouteImport } from './routes/dashboard/settings/index'
@@ -58,6 +59,11 @@ const IndexRoute = IndexRouteImport.update({
 const DashboardIndexRoute = DashboardIndexRouteImport.update({
   id: '/dashboard/',
   path: '/dashboard/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardProductsRoute = DashboardProductsRouteImport.update({
+  id: '/dashboard/products',
+  path: '/dashboard/products',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRegisterRoute = AuthRegisterRouteImport.update({
@@ -213,6 +219,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/register': typeof AuthRegisterRoute
+  '/dashboard/products': typeof DashboardProductsRoute
   '/dashboard': typeof DashboardIndexRoute
   '/dashboard/documentation/changelog': typeof DashboardDocumentationChangelogRoute
   '/dashboard/documentation/get-started': typeof DashboardDocumentationGetStartedRoute
@@ -245,6 +252,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/register': typeof AuthRegisterRoute
+  '/dashboard/products': typeof DashboardProductsRoute
   '/dashboard': typeof DashboardIndexRoute
   '/dashboard/documentation/changelog': typeof DashboardDocumentationChangelogRoute
   '/dashboard/documentation/get-started': typeof DashboardDocumentationGetStartedRoute
@@ -278,6 +286,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/register': typeof AuthRegisterRoute
+  '/dashboard/products': typeof DashboardProductsRoute
   '/dashboard/': typeof DashboardIndexRoute
   '/dashboard/documentation/changelog': typeof DashboardDocumentationChangelogRoute
   '/dashboard/documentation/get-started': typeof DashboardDocumentationGetStartedRoute
@@ -312,6 +321,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/auth/login'
     | '/auth/register'
+    | '/dashboard/products'
     | '/dashboard'
     | '/dashboard/documentation/changelog'
     | '/dashboard/documentation/get-started'
@@ -344,6 +354,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/auth/login'
     | '/auth/register'
+    | '/dashboard/products'
     | '/dashboard'
     | '/dashboard/documentation/changelog'
     | '/dashboard/documentation/get-started'
@@ -376,6 +387,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/auth/login'
     | '/auth/register'
+    | '/dashboard/products'
     | '/dashboard/'
     | '/dashboard/documentation/changelog'
     | '/dashboard/documentation/get-started'
@@ -409,6 +421,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   AuthLoginRoute: typeof AuthLoginRoute
   AuthRegisterRoute: typeof AuthRegisterRoute
+  DashboardProductsRoute: typeof DashboardProductsRoute
   DashboardIndexRoute: typeof DashboardIndexRoute
   DashboardDocumentationChangelogRoute: typeof DashboardDocumentationChangelogRoute
   DashboardDocumentationGetStartedRoute: typeof DashboardDocumentationGetStartedRoute
@@ -464,6 +477,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/products': {
+      id: '/dashboard/products'
+      path: '/dashboard/products'
+      fullPath: '/dashboard/products'
+      preLoaderRoute: typeof DashboardProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth/register': {
@@ -657,6 +677,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   AuthLoginRoute: AuthLoginRoute,
   AuthRegisterRoute: AuthRegisterRoute,
+  DashboardProductsRoute: DashboardProductsRoute,
   DashboardIndexRoute: DashboardIndexRoute,
   DashboardDocumentationChangelogRoute: DashboardDocumentationChangelogRoute,
   DashboardDocumentationGetStartedRoute: DashboardDocumentationGetStartedRoute,

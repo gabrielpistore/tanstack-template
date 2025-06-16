@@ -1,11 +1,63 @@
-# Getting Started
+# TanStack Template with Data Provider
 
-To run this application:
+A modern React template with TanStack Router, TanStack Query, and a backend-agnostic data provider system.
+
+## Quick Start
+
+1. **Install dependencies:**
 
 ```bash
 bun install
-bunx --bun run start
 ```
+
+2. **Set up environment:**
+
+```bash
+./setup-env.sh
+```
+
+3. **Configure your backend** (see [CORS Setup Guide](docs/CORS_SETUP.md))
+
+4. **Start development server:**
+
+```bash
+bun dev
+```
+
+## Django Integration
+
+This template is optimized for Django REST Framework with JWT authentication.
+
+### Quick Setup for Django:
+
+1. **Install CORS headers:**
+
+```bash
+pip install django-cors-headers
+```
+
+2. **Configure CORS in Django `settings.py`:**
+
+```python
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+CORS_ALLOW_CREDENTIALS = True
+```
+
+### Detailed Guides:
+
+- 🔧 [CORS Setup Guide](docs/CORS_SETUP.md) - Fix CORS issues
+- 🐛 [Django CORS Fix](docs/DJANGO_CORS_FIX.md) - Specific Django fixes
+- 🧪 [Django Integration Test](docs/DJANGO_INTEGRATION_TEST.md) - Test your setup
+
+### Features:
+
+- ✅ **Automatic field mapping** (Django `first_name` ↔ Frontend `firstName`)
+- ✅ **JWT token management** with automatic refresh
+- ✅ **Error handling** with Django validation errors
+- ✅ **Type-safe** API calls with full TypeScript support
 
 # Building For Production
 

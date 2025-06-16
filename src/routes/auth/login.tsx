@@ -1,4 +1,5 @@
 import { AuthLayout } from "@/components/layouts/auth-layout";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,7 +11,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { createFileRoute } from "@tanstack/react-router";
+import { useAuth } from "@/hooks/useAuth";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { AlertCircle, Loader2 } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/auth/login")({
   component: () => (
@@ -21,6 +25,40 @@ export const Route = createFileRoute("/auth/login")({
 });
 
 function LoginPage() {
+  const { login, isLoggingIn, loginError, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    remember: false,
+  });
+
+  // Redirecionar se já estiver autenticado
+  useEffect(() => {
+    console.log("🔍 LoginPage: Auth state changed:", { isAuthenticated });
+    if (isAuthenticated) {
+      console.log("🚀 LoginPage: Redirecting to dashboard...");
+      navigate({ to: "/dashboard" });
+    }
+  }, [isAuthenticated, navigate]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("📝 LoginPage: Submitting login form...", formData.email);
+    login({
+      email: formData.email,
+      password: formData.password,
+    });
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
   return (
     <Card>
       <CardHeader className="text-center">
@@ -28,7 +66,17 @@ function LoginPage() {
         <CardDescription>Sign in to your account to continue</CardDescription>
       </CardHeader>
       <CardContent>
-        <form className="space-y-4">
+        {loginError && (
+          <Alert variant="destructive" className="mb-4">
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription>
+              {(loginError as any)?.message ||
+                "Erro ao fazer login. Verifique suas credenciais."}
+            </AlertDescription>
+          </Alert>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input
@@ -36,6 +84,9 @@ function LoginPage() {
               name="email"
               type="email"
               placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleInputChange}
+              disabled={isLoggingIn}
               required
             />
           </div>
@@ -47,6 +98,9 @@ function LoginPage() {
               name="password"
               type="password"
               placeholder="Enter your password"
+              value={formData.password}
+              onChange={handleInputChange}
+              disabled={isLoggingIn}
               required
             />
           </div>
@@ -55,20 +109,25 @@ function LoginPage() {
             <div className="flex items-center space-x-2">
               <input
                 id="remember"
+                name="remember"
                 type="checkbox"
+                checked={formData.remember}
+                onChange={handleInputChange}
+                disabled={isLoggingIn}
                 className="text-primary focus:ring-primary h-4 w-4 rounded border-gray-300"
               />
               <Label htmlFor="remember" className="text-sm">
                 Remember me
               </Label>
             </div>
-            <Button variant="link" className="px-0 text-sm">
+            <Button variant="link" className="px-0 text-sm" type="button">
               Forgot password?
             </Button>
           </div>
 
-          <Button type="submit" className="w-full">
-            Sign in
+          <Button type="submit" className="w-full" disabled={isLoggingIn}>
+            {isLoggingIn && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            {isLoggingIn ? "Signing in..." : "Sign in"}
           </Button>
         </form>
 
@@ -77,7 +136,7 @@ function LoginPage() {
           <div className="mt-6 text-center">
             <p className="text-muted-foreground text-sm">
               Don't have an account?{" "}
-              <Button variant="link" className="px-0">
+              <Button variant="link" className="px-0" type="button">
                 Sign up
               </Button>
             </p>
@@ -97,7 +156,7 @@ function LoginPage() {
           </div>
 
           <div className="mt-6 grid grid-cols-2 gap-3">
-            <Button variant="outline">
+            <Button variant="outline" type="button" disabled={isLoggingIn}>
               <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
                 <path
                   d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -118,7 +177,7 @@ function LoginPage() {
               </svg>
               Google
             </Button>
-            <Button variant="outline">
+            <Button variant="outline" type="button" disabled={isLoggingIn}>
               <svg
                 className="mr-2 h-4 w-4"
                 fill="currentColor"

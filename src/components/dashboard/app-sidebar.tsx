@@ -9,6 +9,7 @@ import {
   Heart,
   Map,
   PieChart,
+  Server,
   Settings2,
   ShoppingCart,
   SquareTerminal,
@@ -137,6 +138,17 @@ const data = {
         {
           title: "Limits",
           url: "/dashboard/settings/limits",
+        },
+      ],
+    },
+    {
+      title: "Backend",
+      url: "/dashboard/products",
+      icon: Server,
+      items: [
+        {
+          title: "Products",
+          url: "/dashboard/products",
         },
       ],
     },
